@@ -95,7 +95,7 @@ class Pokemon {
         
     }
     
-    func downloadPokemonDetail(completed: DownloadComplete) {
+    func downloadPokemonDetail(completed: @escaping DownloadComplete) {
         
         Alamofire.request(_pokemonURL).responseJSON { (response) in
             
@@ -123,6 +123,8 @@ class Pokemon {
                 print(self._defense)
                 
             }
+            
+            completed()
         }
         
     }

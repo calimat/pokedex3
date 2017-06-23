@@ -33,7 +33,7 @@ class PokemonDetailVC: UIViewController {
         nameLbl.text = pokemon.name
         
         pokemon.downloadPokemonDetail {
-            
+            print("Did arrive here ?")
             //Whatever we write will only be called after network call is complete!
             self.updateUI()
         }
@@ -42,6 +42,11 @@ class PokemonDetailVC: UIViewController {
     }
     
     func updateUI() {
+        
+        attackLbl.text = pokemon.attack
+        defenseLbl.text = pokemon.defense
+        heightLbl.text = pokemon.height
+        weightLbl.text = pokemon.weight
         
     }
     
