@@ -32,6 +32,17 @@ class PokemonDetailVC: UIViewController {
         
         nameLbl.text = pokemon.name
         
+        pokemon.downloadPokemonDetail {
+            
+            //Whatever we write will only be called after network call is complete!
+            self.updateUI()
+        }
+        
+        
+    }
+    
+    func updateUI() {
+        
     }
     
     @IBAction func backBtnPressed(_ sender: Any) {
